@@ -4,17 +4,22 @@ import {
     Text,
     StyleSheet
 } from "react-native";
+import { createStackNavigator } from 'react-navigation'
 
 class ShoopingCart extends Component{
     render(){
         return(
-            <View style={styles.container}>
-                <Text>ShoopingCart</Text>
-            </View>
+            <AppStackNavigator />
         );
     }
 }
 export default ShoopingCart;
+
+const AppStackNavigator = createStackNavigator({
+    Home: HomeScreen,
+    Electronics: ElectronicsScreen,
+    Books: BooksScreen
+})
 
 const styles = StyleSheet.create({
     container: {
