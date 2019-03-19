@@ -5,6 +5,9 @@ import {
     StyleSheet
 } from "react-native";
 import { createStackNavigator } from 'react-navigation'
+import HomeScreen from './containers/HomeScreen'
+import ElectronicsScreen from './containers/ElectronicsScreen'
+import BooksScreen from './containers/BookScreen'
 
 class ShoopingCart extends Component{
     render(){
