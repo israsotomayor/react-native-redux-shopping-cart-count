@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Button
 } from "react-native";
 
 class HomeScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <Text>HomeScreen</Text>
+                <Button title="ELectronics" 
+                onPress={()=>this.props.navigation.navigate('Electronics')} />
+                <Button title="Books"
+                onPress={()=>this.props.navigation.navigate('Books')} />
             </View>
         );
     }

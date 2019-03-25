@@ -5,11 +5,18 @@ import {
     StyleSheet
 } from "react-native";
 
+import {electronics} from '../Data';
+import Products from '../components/Products';
+
 class ElectronicsScreen extends Component{
+
+    static navigationOptions = {
+        headerTitle: 'Electronics'
+    }
     render(){
         return (
             <View style={styles.container}>
-                <Text>ElectronicsScreen</Text>
+                <Products products = {electronics} />
             </View>
         );
     }

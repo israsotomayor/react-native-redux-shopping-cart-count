@@ -5,11 +5,14 @@ import {
     StyleSheet
 } from "react-native";
 
+import {books} from '../Data'
+import Products from '../components/Products'
+
 class BookScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <Text>BookScreen</Text>
+                <Products products={books} />
             </View>
         );
     }
@@ -20,6 +23,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-    },
+        justifyContent: 'center'
+    }
 });
