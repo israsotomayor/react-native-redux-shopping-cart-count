@@ -9,10 +9,11 @@ import {
 class Products extends Component{
 
     renderProducts = (products) => {
+        console.log(products)
         return products.map((item, index) => {
             return (
                 <View key={index} style={{padding:20}}>
-                    <Button onPress={(item) => this.props.onPress(item)}
+                    <Button onPress={() => this.props.onPress(item)}
                     title={item.name + " - " + item.price} />
                 </View>
             )
