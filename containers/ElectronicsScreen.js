@@ -7,6 +7,7 @@ import {
 
 import {electronics} from '../Data';
 import Products from '../components/Products';
+import {connect} from 'react-redux';
 
 class ElectronicsScreen extends Component{
 
@@ -16,12 +17,20 @@ class ElectronicsScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <Products products = {electronics} />
+                <Products products = {electronics} onPress=
+                {this.props.addItemToCart} />
             </View>
         );
     }
 }
-export default ElectronicsScreen;
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        addItemToCart:(product) => dispatch({type:'ADD_TO_CART',
+    payload:product})
+    }
+}
+export default connect(null, mapDispatchToProps)(ElectronicsScreen);
 
 const styles = StyleSheet.create({
     container: {

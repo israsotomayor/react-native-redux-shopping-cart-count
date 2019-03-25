@@ -7,17 +7,26 @@ import {
 
 import {books} from '../Data'
 import Products from '../components/Products'
+import {connect} from 'react-redux'
 
 class BookScreen extends Component{
     render(){
         return (
             <View style={styles.container}>
-                <Products products={books} />
+                <Products products={books} onPress=
+                {this.props.addItemToCart} />
             </View>
         );
     }
 }
-export default BookScreen;
+
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        addItemToCart:(product) => dispatch({type:'ADD_TO_CART',
+    payload:product})
+    }
+}
+export default connect(null, mapDispatchToProps)(BookScreen);
 
 const styles = StyleSheet.create({
     container: {
